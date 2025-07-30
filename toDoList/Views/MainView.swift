@@ -9,13 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello my name is Sid")
-        }
-        .padding()
+        //this type of view will allow the admission or dismissal of the register view
+            LoginView()
     }
 }
 
