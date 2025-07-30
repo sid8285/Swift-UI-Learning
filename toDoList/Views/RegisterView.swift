@@ -9,7 +9,19 @@ import SwiftUI
 
 struct RegisterView: View {
     var body: some View {
-        Text("I love my Bubby")
+        NavigationView {
+            VStack {
+                HeaderView(title: "Register",
+                           description: "Sign up!",
+                           angle: -15,
+                           backgroundColor: .orange)
+                
+                Spacer()
+            }
+//            .offset(y: -270)
+            
+            
+        }
     }
 }
 

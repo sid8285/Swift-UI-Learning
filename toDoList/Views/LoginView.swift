@@ -18,7 +18,11 @@ struct LoginView: View {
             VStack{
                 
                 //Header
-                HeaderView()
+                HeaderView(title: "Welcome to ToDoList",
+                           description: "Get things done",
+                           angle: 15,
+                           backgroundColor: .red
+                )
                 //Login Form
                 
                 Form{
@@ -43,6 +47,7 @@ struct LoginView: View {
                     
                 }
                 .frame(maxHeight: 253)
+                .offset(x: 0, y: -50)
                 
                 
                 //Create account
