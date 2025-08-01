@@ -9,8 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State var email = ""
-    @State var password = ""
+    @StateObject var viewModel = LoginViewViewModel()
     
     var body: some View {
         //Since the elements are aaranged vertically, the natural assumption would be to use a vertical stack to arrange the elements
@@ -26,23 +25,16 @@ struct LoginView: View {
                 //Login Form
                 
                 Form{
-                    TextField("Email", text: $email)
+                    TextField("Email", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    SecureField("Password", text: $password)
+                        .autocapitalization(.none)
+                        .autocorrectionDisabled(true)
+                    SecureField("Password", text: $viewModel.password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
-                    Button {
-                        //Attempt login
-                    } label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.blue)
-                                .frame(height: 44)
-                            Text("Login")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                        }
-                    }
+                    TLButton(title: "Login", background: .blue, action: {
+                        
+                    })
                     .padding()
                     
                 }
